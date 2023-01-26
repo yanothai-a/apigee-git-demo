@@ -1,110 +1,113 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ProxyEndpoint name="default">
-  <PreFlow name="PreFlow">
-    <Request>
-      <Step>
-        <Name>verify-api-key</Name>
-      </Step>
-      <Step>
-        <Name>remove-query-param-apikey</Name>
-      </Step>
-    </Request>
-    <Response/>
-  </PreFlow>
-  <Flows>
-    <Flow name="getPosts">
-      <Description>Get all available posts</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="get /posts/{id}">
-      <Description>Get specific post</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/posts/*") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="get /posts/{id}/comments">
-      <Description>Get comments for a specific post</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/posts/*/comments") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getComments">
-      <Description>Get all available comments</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getComment">
-      <Description>Get specific comment</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/comments/*") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getAlbums">
-      <Description>Get all available albums</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/albums") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="get /albums/{id}">
-      <Description>Get specific album</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/albums/*") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="get /albums/{id}/photos">
-      <Description>Get photos for a specific album</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/albums/*/photos") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getPhotos">
-      <Description>Get all available photos</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/photos") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getPhoto">
-      <Description>Get specific photo</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/photos/*") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getTodos">
-      <Description>Get all available todos</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/todos") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getTodo">
-      <Description>Get specific todo</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/todos/*") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getUsers">
-      <Description>Get all available users</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "GET")</Condition>
-    </Flow>
-    <Flow name="getUser">
-      <Description>Get specific user</Description>
-      <Request/>
-      <Response/>
-      <Condition>(proxy.pathsuffix MatchesPath "/users/*") and (request.verb = "GET")</Condition>
-    </Flow>
-  </Flows>
-  <PostFlow name="PostFlow">
-    <Request/>
-    <Response/>
-  </PostFlow>
-  <HTTPProxyConnection>
-    <BasePath>/demo</BasePath>
-  </HTTPProxyConnection>
-  <RouteRule name="default">
-    <TargetEndpoint>default</TargetEndpoint>
-  </RouteRule>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>verify-api-key</Name>
+            </Step>
+            <Step>
+                <Name>remove-query-param-apikey</Name>
+            </Step>
+            <Step>
+                <Name>Spike-Arrest-1</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="getPosts">
+            <Description>Get all available posts</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/posts") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /posts/{id}">
+            <Description>Get specific post</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/posts/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /posts/{id}/comments">
+            <Description>Get comments for a specific post</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/posts/*/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getComments">
+            <Description>Get all available comments</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getComment">
+            <Description>Get specific comment</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/comments/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getAlbums">
+            <Description>Get all available albums</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/albums") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /albums/{id}">
+            <Description>Get specific album</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/albums/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="get /albums/{id}/photos">
+            <Description>Get photos for a specific album</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/albums/*/photos") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getPhotos">
+            <Description>Get all available photos</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/photos") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getPhoto">
+            <Description>Get specific photo</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/photos/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getTodos">
+            <Description>Get all available todos</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/todos") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getTodo">
+            <Description>Get specific todo</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/todos/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getUsers">
+            <Description>Get all available users</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="getUser">
+            <Description>Get specific user</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/demo</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
 </ProxyEndpoint>
